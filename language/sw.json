@@ -2,6 +2,23 @@
   "semantics": [
     {
       "label": "Picha"
+    },
+    {
+      "label": "Description",
+      "description": "Optional. This text is displayed underneath the image."
+    },
+    {
+      "label": "Accessibility texts",
+      "fields": [
+        {
+          "label": "Expand description",
+          "default": "Expand description"
+        },
+        {
+          "label": "Collapse description",
+          "default": "Collapse description"
+        }
+      ]
     }
   ]
 }

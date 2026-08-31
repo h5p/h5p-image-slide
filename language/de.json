@@ -2,6 +2,23 @@
   "semantics": [
     {
       "label": "Bild"
+    },
+    {
+      "label": "Beschreibung",
+      "description": "Optional. Dieser Text wird unter dem Bild dargestellt."
+    },
+    {
+      "label": "Texte für Barrierefreiheit",
+      "fields": [
+        {
+          "label": "Beschreibung ausklappen",
+          "default": "Beschreibung ausklappen"
+        },
+        {
+          "label": "Beschreibung einklappen",
+          "default": "Beschreibung einklappen"
+        }
+      ]
     }
   ]
 }

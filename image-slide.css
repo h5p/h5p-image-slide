@@ -1,9 +1,87 @@
-.h5p-image-slide-image-holder {
-  position: relative;
-}
 .h5p-image-slide {
   width: 100%;
-  height: 100%;
   position: relative;
   background: #000000;
+}
+
+.h5p-image-slide-image-holder {
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.h5p-image-slide-image-holder.h5p-image.no-fixed-aspect-ratio {
+  background-color: #ffffff;
+}
+
+.h5p-image-slide-image-holder.h5p-image.no-fixed-aspect-ratio img {
+  object-position: top;
+}
+
+.h5p-description-container {
+  --min-lines: 2;
+  --max-lines: 5;
+  --description-line-height: 1.5rem;
+  --description-padding: 5px;
+  background-color: black;
+  color: #ffffff;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: auto;
+  align-self: flex-start;
+  font-size: 1rem;
+  padding: var(--description-padding);
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.h5p-description-container .h5p-description-toggle {
+  position: absolute;
+  top: -0.4em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.h5p-description-container .h5p-description-toggle.display-none {
+  display: none;
+}
+
+.h5p-description-container .h5p-description-toggle .arrow-icon {
+  width: 0.75rem;
+  height: 0.5rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none"><path d="M12.5 1.5L7 6L1.5 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.h5p-description-container.collapsed .h5p-description-toggle .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.h5p-description-container .h5p-description-text {
+  display: -webkit-box;
+  line-height: var(--description-line-height);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.h5p-description-container.collapsed .h5p-description-text {
+  max-height: calc(var(--min-lines) * var(--description-line-height));
+  -webkit-line-clamp: var(--min-lines);
+}
+
+.h5p-description-container:not(.collapsed) .h5p-description-text {
+  max-height: calc(var(--max-lines) * var(--description-line-height));
+  -webkit-line-clamp: var(--max-lines);
 }
